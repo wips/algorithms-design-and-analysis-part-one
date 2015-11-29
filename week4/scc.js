@@ -77,11 +77,9 @@
                     }
                     top.visits++;
                     sccSize++;
-                    //console.log(top.name);
-                    let nonVisitedChildren = top[field].filter(number => originalList[number].visits < visitsNumber);
-                    nonVisitedChildren.forEach(function (number) {
-                        stack.push(originalList[number]);
-                    });
+                    top[field]
+                        .filter(number => originalList[number].visits < visitsNumber)
+                        .forEach(number => stack.push(originalList[number]));
                 }
             };
         }
